@@ -30,6 +30,15 @@ pub fn parse(hexstr: &[u8]) -> Vec<u8> {
 }
 
 
+pub fn print_bytes(bytes: &[u8]) {
+    for chunk in bytes.chunks(16) {
+        for byte in chunk {
+            print!("{:02X} ", byte);
+        }
+        println!("");
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
